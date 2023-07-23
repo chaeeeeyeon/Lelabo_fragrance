@@ -1,0 +1,813 @@
+@font-face {
+    font-family: 'bell';
+    src: url('../font/bellgothicstd-black-webfont.woff');
+}
+
+@font-face {
+    font-family: 'sang';
+    src: url('../font/SangSangClover_Regular.woff');
+}
+
+@font-face {
+    font-family: 'noto';
+    src: url('../font/NotoSans-Regular.woff');
+}
+@keyframes map-circle {
+    0% {
+        clip-path: circle(20.0% at 11% 18%);
+    }
+
+    30% {
+        clip-path: circle(31.3% at 80% 24%);
+    }
+
+    50% {
+        clip-path: circle(37.2% at 24% 70%);
+    }
+
+    80% {
+        clip-path: circle(49.3% at 75% 55%);
+    }
+
+    100% {
+        clip-path: circle(67.2% at 50% 50%);
+    }
+}
+@keyframes soft {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+* {
+    padding: 0;
+    margin: 0;
+    transition: all 0.5s;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    background-color: #f2f2f2;
+    scroll-behavior: smooth;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    width: 100%;
+    height: 16vh;
+}
+
+header .inner {
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .inner .logo{
+    width: 300px;
+}
+
+header .inner h1 {
+    font-size: 0;
+}
+
+.submenu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #f2f2f2;
+    z-index: 9999;
+    display: none;
+    animation: soft 1s ease-out;
+    color: #333333;
+}
+
+.submenu .close {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+}
+
+.submenu ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 60%;
+    font-family: 'bell';
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+main{
+    margin-bottom: 20%;
+}
+main .background img{
+    margin: 0 auto;
+    width: 85%;
+}
+main .title h2{
+    text-align: center;
+    font-family: 'bell';
+    font-size: 5rem;
+    margin: 10% auto;
+    color: #333333;
+    width: 80%;
+}
+main .text{
+    font-family: 'sang';
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+    width: 80%;
+    margin: 0 auto;
+    letter-spacing: 0.2rem;
+}
+main .text h3{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+main .text p{
+    width: 60%;
+    margin-left: 40%;
+    line-height: 3rem;
+}
+.first {
+    width: 85%;
+    margin: 20% auto;
+}
+
+.first .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first .logo h2 {
+    font-family: 'bell';
+    font-size: 5rem;
+    margin-bottom: 10%;
+    color: #333333;
+}
+
+.first .bbox {
+    display: flex;
+    font-family: 'sang';
+    color: white;
+    letter-spacing: 0.2rem;
+    justify-content: space-around;
+    margin-bottom: 10%;
+}
+
+.first .bbox .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #333333;
+    font-size: 1.7rem;
+    line-height: 3rem;
+    width: 40%;
+    margin-left: 3%;
+}
+.first .bbox .text h4{
+    font-size: 1.8rem;
+    margin-bottom: 5%;
+}
+.two{
+    width: 85%;
+    margin: 20% auto;
+}
+.two h2{
+    font-family: 'bell';
+    font-size: 5rem;
+    margin-bottom: 10%;
+    color: #333333;
+    text-align: center;
+}
+.two .list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.two .list .box{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333333;
+    margin-bottom: 5%;
+
+}
+.two .list .box .text{
+    font-family: 'sang';
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
+    margin-top: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.two .list .box .text h4{
+    font-size: 1.8rem;
+    margin-bottom: 5%;
+}
+.two .list .box .text p{
+    line-height: 2.5rem;
+}
+.three {
+    width: 95%;
+    margin: 20% auto;
+    text-align: center;
+}
+.three h2 {
+    font-family: 'bell';
+    font-size: 5rem;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #333333;
+}
+
+.three>.map {
+    animation-name: map-circle;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.three>.text {
+    font-family: 'sang';
+    margin: 25% auto;
+    font-size: 1.9rem;
+    letter-spacing: 0.2rem;
+    line-height: 2.5rem;
+    color: #333333;
+    text-align: center;
+}
+
+.three .slidemap {
+    margin: 10% auto;
+    width: 80vw;
+}
+
+.three .slidemap .box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    width: 35vw;
+}
+
+.three .slidemap .box .map>img {
+    margin: 0 auto;
+}
+
+.three .slidemap .box .perfume {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+}
+
+.three .slidemap .box h4 {
+    font-family: 'sang';
+    font-size: 1.9rem;
+    letter-spacing: 0.1rem;
+    position: absolute;
+    top: 0;
+    left: 1%;
+    color: #333333;
+}
+
+.three .slidemap .box .text {
+    font-family: 'sang';
+    margin-top: 10%;
+    letter-spacing: 0.2rem;
+    line-height: 2.3rem;
+    font-size: 1.9rem;
+    color: #333333;
+    text-align: center;
+    width: 500px;
+}
+footer {
+    width: 100%;
+    height: 80vh;
+    border-top: 3px solid #9c9c9c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .inner {
+    width: 80vw;
+}
+
+footer .inner .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .inner .top .text ul {
+    font-family: 'sang';
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+}
+
+footer .inner .top .text ul li:nth-child(1) {
+    font-weight: bold;
+}
+
+footer .inner .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+    font-family: 'sang';
+    letter-spacing: 0.2rem;
+    line-height: 2.5rem;
+    font-size: 1.8rem;
+}
+
+footer .inner .bottom figure {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+@media screen and (min-width:1024px) and (max-width:1200px) {
+    header .inner{
+        width: 90%;
+    }
+    header .inner .logo{
+        width: 90%;
+    }
+    header .inner .menu{
+        width: 40px;
+    }
+    .submenu .close{
+        left: 90%;
+        width: 60px;
+    }
+    .submenu ul{
+        font-size: 2.9rem;
+    }
+    main .title h2{
+        font-size: 4rem;
+    }
+    main .text h3{
+        font-size: 2rem;
+    }
+    main .text p{
+        font-size: 1.5rem;
+    }
+    .first .logo h2{
+        font-size: 4rem;
+    }
+    .first .bbox .text {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        width: 50%;
+        margin-left: 2%;
+    }
+    .first .bbox .text h4{
+        font-size: 1.6rem;
+    }
+    .two h2{
+        font-size: 4rem;
+    }
+    .two .list .box{
+        width: 30%;
+    }
+    .two .list .box .text{
+        width: 90%;
+    }
+    .two .list .box .text h4{
+        font-size: 1.6rem;
+    }
+    .two .list .box .text p{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .three h2 {
+        font-size: 4rem;
+    }
+
+    .three>.text {
+        font-size: 1.5rem;
+    }
+
+    .three .slidemap .box h4 {
+        font-size: 1.5rem;
+    }
+
+    .three .slidemap .box .text {
+        width: 370px;
+        font-size: 1.4rem;
+    }
+    footer .inner .top .text ul {
+        font-size: 1.3rem;
+    }
+
+    footer .inner .bottom p {
+        font-size: 1.3rem;
+    }
+}
+@media screen and (min-width:767px) and (max-width:1023px) {
+    header .inner{
+        width: 90%;
+    }
+    header .inner .logo{
+        width: 80%;
+    }
+    header .inner .menu{
+        width: 40px;
+    }
+    .submenu .close{
+        left: 85%;
+        width: 60px;
+    }
+    .submenu ul{
+        font-size: 2.8rem;
+    }
+    main .title h2{
+        font-size: 3rem;
+    }
+    main .text h3{
+        font-size: 1.7rem;
+    }
+    main .text p{
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+    }
+    .first .logo h2{
+        font-size: 3rem;
+    }
+    .first .bbox {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+    .first .bbox .text {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        width: 80%;
+        margin-top: 5%;
+    }
+    .first .bbox .text h4{
+        font-size: 1.5rem;
+    }
+    .two h2{
+        font-size: 3rem;
+    }
+    .two .list .box{
+        width: 50%;
+    }
+    .two .list .box .text{
+        width: 90%;
+    }
+    .two .list .box .text h4{
+        font-size: 1.5rem;
+    }
+    .two .list .box .text p{
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    .three h2 {
+        font-size: 3rem;
+    }
+
+    .three>.text {
+        font-size: 1.3rem;
+    }
+
+    .three .slidemap .box h4 {
+        font-size: 1.3rem;
+    }
+
+    .three .slidemap .box .text {
+        width: 350px;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    footer {
+        height: 50vh;
+    }
+
+    footer .inner .top {
+        display: none;
+    }
+
+    footer .inner .bottom p {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (min-width:540px) and (max-width:766px) {
+    header .inner{
+        width: 90%;
+    }
+    header .inner .logo{
+        width: 80%;
+    }
+    header .inner .menu{
+        width: 35px;
+    }
+    .submenu .close{
+        left: 85%;
+        width: 55px;
+    }
+    .submenu ul{
+        font-size: 2.7rem;
+    }
+    main .title h2{
+        font-size: 2.4rem;
+    }
+    main .text h3{
+        font-size: 1.4rem;
+    }
+    main .text p{
+        font-size: 1.1rem;
+        line-height: 2rem;
+    }
+    .first .logo h2{
+        font-size: 2.4rem;
+    }
+    .first .bbox {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+    .first .bbox .text {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        width: 80%;
+        margin-top: 5%;
+    }
+    .first .bbox .text h4{
+        font-size: 1.4rem;
+    }
+    .two h2{
+        font-size: 2.4rem;
+    }
+    .two .list .box{
+        width: 45%;
+    }
+    .two .list .box .text{
+        width: 90%;
+    }
+    .two .list .box .text h4{
+        font-size: 1.4rem;
+    }
+    .two .list .box .text p{
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+    .three h2 {
+        font-size: 2.4rem;
+    }
+
+    .three>.text {
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+        line-height: 2rem;
+    }
+
+    .three .slidemap .box h4 {
+        font-size: 1.2rem;
+    }
+
+    .three .slidemap .box .text {
+        width: 350px;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+    footer {
+        height: 50vh;
+    }
+
+    footer .inner .top {
+        display: none;
+    }
+
+    footer .inner .bottom p {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:539px) {
+    header .inner{
+        width: 90%;
+    }
+    header .inner .logo{
+        width: 70%;
+    }
+    header .inner .menu{
+        width: 30px;
+    }
+    .submenu .close{
+        left: 80%;
+        width: 50px;
+    }
+    .submenu ul{
+        font-size: 2.5rem;
+    }
+    main .title h2{
+        font-size: 2rem;
+    }
+    main .text h3{
+        font-size: 1.2rem;
+    }
+    main .text p{
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        width: 70%;
+        margin-left: 30%;
+    }
+    .first .logo h2{
+        font-size: 2.2rem;
+    }
+    .first .bbox {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+    .first .bbox .text {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        width: 80%;
+        margin-top: 5%;
+    }
+    .first .bbox .text h4{
+        font-size: 1.3rem;
+    }
+    .two h2{
+        font-size: 2.2rem;
+    }
+    .two .list .box{
+        width: 40%;
+    }
+    .two .list .box .text{
+        width: 90%;
+    }
+    .two .list .box .text h4{
+        font-size: 1.2rem;
+    }
+    .two .list .box .text p{
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+    }
+    .three h2 {
+        font-size: 2rem;
+    }
+
+    .three>.text {
+        font-size: 1.1rem;
+        letter-spacing: 0.1rem;
+        line-height: 1.8rem;
+    }
+
+    .three .slidemap .box h4 {
+        font-size: 1.1rem;
+    }
+
+    .three .slidemap .box .text {
+        width: 300px;
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+    }
+    footer {
+        height: 50vh;
+    }
+
+    footer .inner .top {
+        display: none;
+    }
+
+    footer .inner .bottom p {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:400px){
+    header .inner{
+        width: 90%;
+    }
+    header .inner .logo{
+        width: 60%;
+    }
+    header .inner .menu{
+        width: 30px;
+    }
+    .submenu .close{
+        left: 80%;
+        width: 50px;
+    }
+    .submenu ul{
+        font-size: 2rem;
+    }
+    main .title h2{
+        font-size: 1.8rem;
+    }
+    main .text h3{
+        font-size: 1.1rem;
+    }
+    main .text p{
+        font-size: 1rem;
+        line-height: 1.2rem;
+        width: 80%;
+        margin-left: 20%;
+    }
+    .first .logo h2{
+        font-size: 1.8rem;
+    }
+    .first .bbox {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+    .first .bbox .text {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        width: 80%;
+        margin-top: 5%;
+    }
+    .first .bbox .text h4{
+        font-size: 1.2rem;
+    }
+    .two h2{
+        font-size: 1.8rem;
+    }
+    .two .list .box{
+        width: 38%;
+    }
+    .two .list .box .text{
+        width: 100%;
+    }
+    .two .list .box .text h4{
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+    }
+    .two .list .box .text p{
+        font-size: 0.9rem;
+        line-height: 1rem;
+    }
+    .three h2 {
+        font-size: 1.8rem;
+    }
+
+    .three>.text {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        line-height: 1.8rem;
+    }
+
+    .three .slidemap .box h4 {
+        font-size: 1rem;
+    }
+
+    .three .slidemap .box .text {
+        width: 280px;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    footer {
+        height: 40vh;
+    }
+
+    footer .inner {
+        width: 100vw;
+    }
+
+    footer .inner .top {
+        display: none;
+    }
+
+    footer .inner .bottom p {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+    }
+}
